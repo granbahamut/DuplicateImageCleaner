@@ -7,7 +7,7 @@ import pathlib
 from multiprocessing import Process, current_process
 import matplotlib.pyplot as plt
 
-path = "C:\\Users\\Usuario\\Downloads\\Image Picka"
+path = "X:\\SomePathHere"
 
 
 def adjust_images(img_a, img_b):
