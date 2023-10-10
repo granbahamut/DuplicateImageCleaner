@@ -65,7 +65,7 @@ def show_mse(img1, img2):
     Args:
         img1 : InputArray, required
             First image to compare.
-        imag2 : InputArray, required
+        img2 : InputArray, required
             Second image to be compared with img1.
 
     Returns:
@@ -126,12 +126,12 @@ def run_multi_comparison(base_path):
                           if f.is_file() and f.suffix == ".png" or f.suffix == ".jpeg" or f.suffix == ".jpg"]
         if image_files_db.count == 0:
             raise FileExistsError()
-    except OSError:
-        print("Invalid path given, correct it and thy again.")
     except FileNotFoundError:
         print("Path {} not found.", base_path)
     except FileExistsError:
         print("There's no files on {} that are images.", base_path)
+    except OSError:
+        print("Invalid path given, correct it and thy again.")
 
     processing_threads = 4  # multiprocessing.cpu_count()
     print("Using {} processors from {} for this execution.".format(processing_threads, multiprocessing.cpu_count()))
